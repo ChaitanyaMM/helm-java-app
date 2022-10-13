@@ -38,12 +38,9 @@ securityContext: {}
 
 service:
   type: NodePort
-  ports:
-    - name : sample-helm
-      port: 8989
-      nodePort: 31223
-      protocol: TCP
-      targetPort: 8989
+  port: 80
+  targetPort: 8989
+  nodePort: 30007
 
 ingress:
   enabled: false
