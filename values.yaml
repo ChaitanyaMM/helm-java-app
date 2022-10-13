@@ -1,14 +1,14 @@
-# Default values for sprinboot-k8s-helm.
+# Default values for helloworld.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: chaitu465/springboot-helm-app
+  repository: nginx
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "2.0"
+  tag: ""
 
 imagePullSecrets: []
 nameOverride: ""
@@ -37,13 +37,8 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: NodePort
-  ports:
-    - name : sample-helm
-      port: 8989
-      nodePort: 31223
-      protocol: TCP
-      targetPort: 8989
+  type: ClusterIP
+  port: 80
 
 ingress:
   enabled: false
